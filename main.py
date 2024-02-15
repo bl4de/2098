@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 import os
-
 import src.utils.keyboard as keyboard
-from src.game.game import Game
+from src import play, player, npc
 
 if __name__ == "__main__":
-    game = Game()
+    game = play.Play()
+    player = player.Player()
+    
     try:
         while True:
             key_pressed = keyboard.getkey()
@@ -14,6 +15,7 @@ if __name__ == "__main__":
                 quit()
             else:
                 # main loop
+                print(player)
                 game.play(key_pressed)
 
     except (KeyboardInterrupt, SystemExit):
