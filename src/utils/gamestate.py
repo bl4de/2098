@@ -7,12 +7,13 @@ class Gamestate:
     def __init__(self) -> None:
         self.state = {}
 
-    def save(self, game) -> str:
+    def save(self, game, world) -> str:
         '''
         saves game
         '''
         self.state = {
-            'game_time': game.get_game_time()
+            'game_time': game.get_game_time(),
+            'world_matrix': world.get_matrix()
         }
 
         print(self.state)

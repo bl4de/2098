@@ -1,4 +1,5 @@
 from src.utils.gamestate import Gamestate
+from src.utils.screen import Screen
 
 
 class Play:
@@ -16,8 +17,16 @@ class Play:
         '''
         executes game single round
         '''
-        print("game is playing...")
-        print(key_pressed + ' was pressed')
+        # print(key_pressed + ' was pressed')
+        pass
+
+    def draw(self, world) -> None:
+        '''
+        re-draws the screen (menu, world)
+        '''
+        Screen.clear()
+        print(f"Game time {self.get_game_time()}\n")
+        world.draw()
 
     def get_game_time(self) -> None:
         '''
