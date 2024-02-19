@@ -28,7 +28,7 @@ class Play:
         print(f"Game time {self.get_game_time()}\n")
         world.draw()
 
-    def get_game_time(self) -> None:
+    def get_game_time(self) -> int:
         '''
         returns current time in game
         '''
