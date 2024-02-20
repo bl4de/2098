@@ -24,9 +24,9 @@ class World:
         '''
         return self.matrix
 
-    def draw(self) -> None:
+    def render(self) -> None:
         '''
-        re-draws the world
+        renders the world
         '''
         for x in self.matrix:
             for y in x:

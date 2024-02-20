@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!a/usr/bin/env python3
 import os
 import src.utils.keyboard as keyboard
 
@@ -12,7 +12,7 @@ if __name__ == "__main__":
     player = player.Player()
 
     try:
-        game.draw(world)
+        game.render(world)
         while True:
             key_pressed = keyboard.getkey()
             if key_pressed == 'esc' or key_pressed == 'q':
@@ -21,7 +21,7 @@ if __name__ == "__main__":
                 quit()
             else:
                 # main loop
-                game.draw(world)
+                game.render(world)
                 game_time = game.set_game_time()
 
                 game.play(key_pressed)

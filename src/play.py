@@ -20,13 +20,13 @@ class Play:
         # print(key_pressed + ' was pressed')
         pass
 
-    def draw(self, world) -> None:
+    def render(self, world) -> None:
         '''
-        re-draws the screen (menu, world)
+        renders the screen (menu, world)
         '''
         Screen.clear()
         print(f"Game time {self.get_game_time()}\n")
-        world.draw()
+        world.render()
 
     def get_game_time(self) -> int:
         '''
