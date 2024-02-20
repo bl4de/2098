@@ -24,7 +24,7 @@ class Play:
         '''
         renders the screen (menu, world)
         '''
-        Screen.clear()
+        Screen.clear_screen()
         print(f"Game time {self.get_game_time()}\n")
         world.render()
 

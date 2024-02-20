@@ -7,7 +7,7 @@ class Gamestate:
     def __init__(self) -> None:
         self.state = {}
 
-    def save(self, game, world) -> str:
+    def save(self, game, world) -> bool:
         '''
         saves game
         '''
@@ -17,3 +17,5 @@ class Gamestate:
         }
 
         print(self.state)
+        return True
+

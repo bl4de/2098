@@ -10,5 +10,5 @@ class Screen:
         pass
 
     @staticmethod
-    def clear() -> None:
+    def clear_screen() -> None:
         os.system("clear")
