@@ -4,12 +4,12 @@ class AbstractCharacter:
     all characters in game inherits form this class
     '''
     AVATAR = ''
-    
+
     # initial stats
     HEALTH = 100
-    
+
     STRENGTH = 10
-    
+
     MODE = 'friendly' # 'none', 'angry', 'aggresive', ??
 
     # location in world
@@ -27,19 +27,26 @@ class AbstractCharacter:
         self.POS_X = 0
         self.POS_Y = 0
 
-    def move(self, pos_x: int, pos_y: int, level = None) -> None:
+    def move(self, pos_x: int, pos_y: int, level = 1) -> None:
         '''
         character move
         '''
         self.POS_X = pos_x
         self.POS_Y = pos_y
-        self.LEVEL = level if int(level) > 0 else self.LEVEL
+        self.LEVEL = level if int(level) >= 1 else self.LEVEL
 
-    def getPosX(self) -> int:
+    def getX(self) -> int:
         return self.POS_X
 
-    def getPosY(self) -> int:
+    def getY(self) -> int:
         return self.POS_Y
 
     def getLevel(self) -> int:
         return self.LEVEL
+
+    def render(self) -> str:
+        '''
+        returns character's avatar for rendering
+        '''
+        return self.AVATAR
+
