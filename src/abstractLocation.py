@@ -2,14 +2,17 @@ class AbstractLocation:
     '''
     base abstract class representing location in game
     '''
-    TYPE = 'ground'  # buidling, street, Rapid Transit System, ??
+    TYPE = 'empty'  # buidling, street, Rapid Transit System, ??
 
-    ICON = '.'  # default for ground
+    MATRIX = []
 
-    def __init__(self, type = None, icon = None) -> None:
+    def __init__(self, type = None, matrix = None) -> None:
+        '''
+        initializes location
+        '''
         self.TYPE = type if type is not None else self.TYPE
-        self.ICON = icon if icon is not None else self.ICON
-        
+        self.MATRIX = matrix if matrix is not None else self.MATRIX
+
     def draw(self) -> None:
         '''
         rendering location

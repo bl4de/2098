@@ -1,4 +1,3 @@
-import os
 from typing import List
 
 
@@ -12,9 +11,9 @@ class World:
         initilaizes world with locations
         '''
         self.matrix = [
-            [0, 1, 2],
-            [0, 1, 2],
-            [0, 1, 2]
+            ['empty','empty', 'empty'],
+            ['empty','empty', 'empty'],
+            ['empty','empty', 'empty']
         ]
         self.locations = {}
 
