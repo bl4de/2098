@@ -1,4 +1,7 @@
-class AbstractSimpleLocation:
+from src.abstractLocation import AbstractLocation
+
+
+class AbstractSimpleLocation(AbstractLocation):
 
     def __init__(self, symbol = '') -> None:
         '''
@@ -7,7 +10,7 @@ class AbstractSimpleLocation:
         property
         '''
         self.TYPE = 'simple'
-        self.SYMBOL = symbol i''f symbol is not '' else self.SYMBOL
+        self.SYMBOL = symbol if symbol is not '' else self.SYMBOL
 
     def render(self):
         '''

@@ -1,5 +1,5 @@
 from typing import List
-
+from src.abstractLocation import AbstractLocation
 
 class World:
     '''
@@ -11,12 +11,20 @@ class World:
         initilaizes world with locations
         '''
         self.matrix = [
-            ['empty','empty', 'empty'],
-            ['empty','empty', 'empty'],
-            ['empty','empty', 'empty']
+            [
+                []
+            ]
         ]
+
+
         self.locations = {}
 
+    def add_location(self, level = 0, x = 0, y = 0, location = {}) -> None:
+        '''
+        adds location to the world matrix using coordinates
+        '''
+        self.matrix[level][0].append(location)
+        
     def get_matrix(self) -> List:
         '''
         returns world's matrix
@@ -27,7 +35,12 @@ class World:
         '''
         renders the world
         '''
-        for x in self.matrix:
-            for y in x:
-                print(y, end='')
-            print()
+        level = 0 # start from default level 1 - ground level
+
+        for level in self.matrix:
+            for row in level: 
+                for location in row:
+                    if location.get_type() in ['tree']:
+                        location.render()
+                    else:
+                        pass

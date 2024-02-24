@@ -13,8 +13,9 @@ class AbstractLocation:
         self.TYPE = type if type is not None else self.TYPE
         self.MATRIX = matrix if matrix is not None else self.MATRIX
 
-    def draw(self) -> None:
-        '''
-        rendering location
-        '''
+    def get_type(self) -> str:
+        return self.TYPE
+
+    def render(self):
         pass
+

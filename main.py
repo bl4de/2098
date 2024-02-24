@@ -4,6 +4,7 @@ import src.utils.keyboard as keyboard
 
 from src.utils import gamestate
 from src import world, play, player, npc
+from src.locations import tree
 
 if __name__ == "__main__":
     game = play.Play()
@@ -11,19 +12,22 @@ if __name__ == "__main__":
     gamestate = gamestate.Gamestate()
     player = player.Player()
 
+    world.add_location(0, 0, 0, tree.Tree())
+    world.add_location(0, 0, 1, tree.Tree())
+    world.add_location(0, 0, 2, tree.Tree())
+
     try:
-        game.render(world)
         while True:
+            game.render(world)
             key_pressed = keyboard.getkey()
+            
             if key_pressed == 'esc' or key_pressed == 'q':
                 print(f"\nQuitting at {game.get_game_time()}")
                 gamestate.save(game, world)
                 quit()
             else:
                 # main loop
-                game.render(world)
                 game_time = game.set_game_time()
-
                 game.play(key_pressed)
 
     except (KeyboardInterrupt, SystemExit):
