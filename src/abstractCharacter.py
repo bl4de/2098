@@ -23,10 +23,11 @@ class AbstractCharacter:
 
     POS_Y = 0
 
-    def __init__(self, avatar, color = None) -> None:
+    def __init__(self, avatar_name, avatar, color = None) -> None:
         '''
         character initialization
         '''
+        self.avatar_name = avatar_name
         self.avatar = avatar
         self.color = color if color is not None else self.COLOR
         self.POS_X = 0

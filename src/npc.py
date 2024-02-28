@@ -6,7 +6,7 @@ class NPC(abstractCharacter.AbstractCharacter):
     class representing NPC
     '''
 
-    def __init__(self, avatar = None, color = None) -> None:
+    def __init__(self, avatar_name, avatar = None, color = None) -> None:
         '''
         create NPC skeleton
         '''
@@ -15,4 +15,4 @@ class NPC(abstractCharacter.AbstractCharacter):
         if color is None:
             self.color = keyboard.colors['yellow']
 
-        super().__init__(avatar = avatar)
+        super().__init__(avatar_name = avatar_name, avatar = avatar, color = color)

@@ -10,11 +10,13 @@ if __name__ == "__main__":
     game = play.Play()
     world = world.World()
     gamestate = gamestate.Gamestate()
-    player = player.Player()
 
     world.add_location(0, 0, 0, tree.Tree())
     world.add_location(0, 0, 1, tree.Tree())
     world.add_location(0, 0, 2, tree.Tree())
+    
+    player = player.Player('Player One', None, None)
+    man1 = npc.NPC('Johny', None, 'blue')
 
     try:
         while True:
