@@ -1,9 +1,13 @@
+import src.utils.keyboard as keyboard
+
 class AbstractCharacter:
     '''
     abstract character class
     all characters in game inherits form this class
     '''
     AVATAR = ''
+
+    COLOR = keyboard.colors['white']
 
     # initial stats
     HEALTH = 100
@@ -19,11 +23,12 @@ class AbstractCharacter:
 
     POS_Y = 0
 
-    def __init__(self, avatar) -> None:
+    def __init__(self, avatar, color = None) -> None:
         '''
         character initialization
         '''
-        self.AVATAR = avatar
+        self.avatar = avatar
+        self.color = color if color is not None else self.COLOR
         self.POS_X = 0
         self.POS_Y = 0
 
@@ -44,9 +49,9 @@ class AbstractCharacter:
     def getLevel(self) -> int:
         return self.LEVEL
 
-    def render(self) -> str:
+    def render(self) -> None:
         '''
         returns character's avatar for rendering
         '''
-        return self.AVATAR
+        print(f"{self.color}{self.avatar}")
 

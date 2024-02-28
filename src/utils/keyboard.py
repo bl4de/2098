@@ -4,6 +4,20 @@ import tty
 import os
 import termios
 
+
+colors = {
+    "black": '\33[30m',
+    "red": '\33[31m',
+    "green": '\33[32m',
+    "yellow": '\33[33m',
+    "blue": '\33[34m',
+    "magenta": '\33[35m',
+    "cyan": '\33[36m',
+    "white": '\33[37m',
+    "grey": '\33[90m',
+    "lightblue": '\33[94m'
+}
+
 def getkey():
     old_settings = termios.tcgetattr(sys.stdin)
     tty.setcbreak(sys.stdin.fileno())
